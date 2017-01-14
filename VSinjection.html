@@ -1,0 +1,1528 @@
+
+	<style>
+
+	.set1,.set2{display: none;}
+
+	#showhideguidance{
+	display:inline:
+	}
+
+		.searchoptions{    
+			font-family: arial;
+			font-size: 13px;
+			padding-bottom: 4px;
+			
+		}
+			
+		.tagsets{
+			font-family: arial;
+			font-size: 15px;
+			float: right;
+			padding-right: 10px;
+		}
+		
+		.set0anchor, #sson, #relevancesort{
+			font-weight: bold;
+		}
+
+		#searchtitle{
+			font-family: georgia;
+			font-size: 33px;
+			font-weight: bold;
+			color: #eb8c00;
+			font-style: italic;
+			padding-top: 0px;
+			padding-left:30px;
+		}
+		
+
+		#subtitle{
+			text-align: center;
+			color: #eb8c00;
+			font-family: georgia;
+			padding-left:30px;
+		}
+		
+		.hiddenguidance {
+			display: none;
+		}
+		
+		a.faqlink {
+			float: right;
+			padding-right: 10px;
+			margin-top: -1px;
+		}
+		
+		#showhideheader {
+			text-align: right;
+			padding-right: 20px;
+			font-family: Arial;
+			font-size: 13px;
+			color: #eb8c00;
+			margin-top: 0px;
+			display:none;
+		}
+		
+		.searchresults li .contentresults {
+			padding-left: 20px;
+			padding-bottom: 8px;
+		}
+		
+		#helplink {
+			text-align: left;
+			cursor: pointer;
+			font-family: arial;
+			color: #eb8c00;
+			padding-left: 10px;
+			text-decoration: underline;
+			font-size: 15px;
+			width: 140px;
+		}
+		
+		#guidance {
+			color: gray;
+			padding-left: 10px;
+			font-family: arial;
+			font-size: 14px;
+			margin-left: -5px
+		}
+		
+		#guidance ul {
+		margin-top: 0px;
+	}
+		
+		#showhideheader a:link,
+		#morelesslink a:link,
+		#guidance a:link,
+		.searchoptions a:link,
+		.tagsets a:link{
+			color: #eb8c00;
+			text-decoration: none!important;
+		}
+		
+		#showhideheader a:visited,
+		#morelesslink a:visited,
+		#guidance a:visited,
+		.searchoptions a:visited,
+		.tagsets a:visited
+		{
+			color: #eb8c00;
+			text-decoration: none!important;
+		}
+		
+		#showhideheader a:hover,
+		#morelesslink a:hover,
+		#guidance a:hover,
+		.searchoptions a:hover,
+		.tagsets a:hover {
+			color: #eb8c00;
+			text-decoration: none!important;
+		}
+		
+		#showhideheader a:active,
+		#morelesslink a:active,
+		#guidance a:active,
+		.searchoptions a:active,
+		.tagsets a:active{
+			color: #eb8c00;
+			text-decoration: none!important;
+		}
+		
+		.link {
+			stroke: #ccc;
+			stroke-width: 1px;
+		}
+		
+		.resultdesc {
+			font-family: Arial;
+			font-size: 16px;
+		}
+		
+		#tagsearch {
+			max-width: 600px;
+			width: 100%;
+			height: 44px;
+			padding-top: 0px;
+			font-size: 24px;
+			padding-left: 4px;
+			border-width: 1px;
+			margin-top: 0px;
+			border-style: solid;
+			border-color: #ccc;
+			-webkit-appearance:none;
+			-webkit-border-radius:0px;
+			border-radius:0;
+		}
+		
+		.node {
+			stroke: #fff;
+			stroke-width: 0px;
+		}
+		
+		.textClass {
+			stroke: #323232;
+			font-family: Arial;
+			font-weight: normal;
+			font-size: 11pt;
+		}
+		
+		.textClassMO {
+			stroke: #eb8c00;
+			font-family: Arial;
+			font-weight: normal;
+			color: #eb8c00;
+			font-size: 11pt;
+		}
+		
+		.roottextClass {
+			stroke: #323232;
+			font-family: Arial;
+			font-weight: normal;
+			font-size: 14pt;
+		}
+		
+		.primsrchtype {
+			font-family: Arial;
+			font-size: 13px;
+			padding-right: 10px;
+		}
+		
+		#nodegraph {
+			/*border: solid #dfdfdf;*/
+			border-width: 0px 1px 1px 1px;
+			overflow: hidden;
+			vertical-align: top;
+		}
+		
+		#relatedtermdesc {
+			width: 50%;
+			vertical-align: top;
+			/*border: solid #dfdfdf;*/
+			border-width: 1px 1px 0px 1px;
+			padding-left: 10px;
+			height: 55px;
+			padding-top: 8px;
+		}
+		
+		#searchresultsdesc {
+			width: 50%;
+			vertical-align: top;
+			padding-left: 10px;
+			height: 40px;
+			/*border: solid #dfdfdf;*/
+			border-width: 1px 1px 0px 1px;
+			height: 55px;
+			padding-top: 8px;
+		}
+		
+		.searchterm {
+			color: #000;
+			display: inline;
+			font-weight: bold;
+		}
+		
+		.resulttype {
+			margin-bottom: 10px;
+			background-color: #d3d6d6;
+			padding: 4px 10px;
+		}
+		
+		body {
+			background-color: #fff;
+			height:740px;
+		}
+		
+		button.j-btn {
+			color: #fff;
+			background: #eb8c00;
+			font-weight: 600;
+		}
+		
+		#btn_removeplace {
+			vertical-align: top;
+		}
+		
+		button {
+			color: #fff;
+			padding: 10px 40px;
+			padding-top: 15px;
+			text-align: center;
+			border: 0px;
+			border-radius: 0px;
+			background: #eb8c00;
+			cursor: pointer;
+			font-size: 17px;
+			font-weight: 500;
+			margin: -1px -2px
+		}
+		
+		input[type='text'].j-text {
+			border-radius: 4px;
+			border: 1px solid #bbb;
+			border-bottom: 1px solid #dadada;
+			padding: 6px 4px;
+			transition: all;
+			-webkit-transition: all .3s linear;
+			-moz-transition: all .3s linear;
+			transition: all .3s linear;
+			width: 100%;
+			outline: none;
+			font: 13px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+			box-sizing: border-box;
+		}
+		
+		#pwcmps_ input {
+			color: #9b9b9b;
+			width: 100%;
+			max-width: 540px;
+			border-radius: 0px;
+			border: 1px solid #bbb;
+			height: 29px;
+			font-size: 1em;
+			padding: 2px 6px;
+			padding: 4px 6px 4px 6px;
+			margin: 4px 0px 5px -3px;
+		}
+		
+		a.pwcmps_ParentPlace {
+			font: 15px;
+		}
+		
+		.pwcmps_Icon {
+			display: inline-block;
+			float: left;
+			padding-right: 5px;
+			background: url(/images/jive-icon-sprites-med.png);
+			width: 16px;
+			height: 16px
+		}
+		
+		.pwcmps_Iconnofloat {
+			display: inline-block;
+			padding-right: 5px;
+			background: url(/images/jive-icon-sprites-med.png);
+			width: 16px;
+			height: 16px
+		}
+		
+		.pwcmps_Type_space {
+			background-position: -80px -912px!important
+		}
+		
+		.pwcmps_Type_group {
+			background-position: -208px -912px!important
+		}
+		
+		.pwcmps_Type_project {
+			background-position: -144px -912px!important
+		}
+		
+		.pwcmps_Type_file {
+			background-position: -1041px -80px!important
+		}
+		
+		.pwcmps_Type_idea {
+			background-position: -851px -16px!important
+		}
+		
+		.pwcmps_Type_video {
+			background-position: -592px -80px!important
+		}
+		
+		.pwcmps_Type_discussion,
+		.pwcmps_Type_message,
+		.pwcmps_Type_comment {
+			background-position: -16px -16px!important
+		}
+		
+		.pwcmps_Type_poll {
+			background-position: -17px -207px!important
+		}
+		
+		.pwcmps_Type_document {
+			background-position: -17px -80px!important
+		}
+		
+		.pwcmps_Type_update {
+			background-position: -273px -528px!important
+		}
+		
+		.pwcmps_Type_post {
+			background-position: -17px -145px!important
+		}
+		
+		.pwcmps_Type_event {
+			background-position: -1040px -16px!important
+		}
+		
+		.pwcmps_Type_photoAlbum {
+			background-position: -336px -80px!important
+		}
+		
+		.pwcmps_Type_106642994 {
+			background-position: -336px -80px!important
+		}
+		
+		.pwcmps_Type_photo {
+			background-position: -336px -80px!important
+		}
+		
+		.pwcmps_Type_dm {
+			background-position: -1296px -849px!important
+		}
+		
+		#tiletitle {
+			width: 100%;
+			font-size: 12px;
+			font-weight: 500;
+			text-transform: uppercase;
+			overflow: hidden;
+			position: relative;
+			display: inline-block;
+			white-space: nowrap;
+			/*max-width: 280px;*/
+			text-overflow: ellipsis;
+			margin: 0 0 5px;
+			line-height: 1em;
+			color: #000;
+		}
+		
+		a.pwcmps_Link {
+			color: #000;
+			font-weight: 300;
+			font: inherit;
+			font-size: 14px;
+			text-decoration: none;
+		}
+		
+		.j-search-result-title {
+			font-size: 14px;
+		}
+		
+		#largeResults1_More,
+		#smallResultsBottom_More,
+		#smallResultsTop_More {
+			background: #f0f0f0;
+			color: #000;
+			position: relative;
+			right: -185px;
+			padding: 0px 1px 6px 5px;
+			border-radius: 23px 0 0px 0;
+			font-weight: 500;
+			height: 17px;
+			text-align: center;
+			font-size: 12px;
+			width: 91px;
+		}
+		
+		#pwcmps_More * {
+			vertical-align: middle
+		}
+		
+		.pwcmps_Loader {
+			margin-top: 10px;
+			text-align: center;
+			color: #dc6900
+		}
+		
+		.jive-avatar {
+			border-radius: 50%;
+			margin-top: 10px;
+		}
+		
+		.j-result-icon {
+			float: left;
+			padding-right: 10px;
+		}
+		
+		.j-title-location {
+			padding-left: 45px;
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+		
+		.j-contact {
+			margin-left: 46px;
+			margin-top: 0px;
+		}
+		
+		.j-search-result-summary {
+			margin-top: 0px;
+			padding-left: 41px;
+		}
+		
+		.jive-icon-big {
+			background-image: url(/images/jive-icon-sprites-big.png);
+			height: 25px;
+			width: 25px;
+			margin: 0 6px 0 0;
+			display: block;
+		}
+		
+		.jive-icon-group {
+			background-position: -208px -912px;
+		}
+		
+		.jive-icon-project {
+			background-position: -144px -912px;
+		}
+		
+		.jive-icon-space {
+			background-position: -80px -912px;
+		}
+		
+		.jive-icon-blog,
+		.jive-icon-blogpost {
+			background-position: -16px -144px;
+		}
+		
+		.searchresults {
+			font-family: Arial;
+			width: 33%;
+			vertical-align: top;
+			background: #fff;
+			/*border: solid #dfdfdf;*/
+			padding-left: 5px;
+			font-weight: 400;
+			font-size: 13px;
+		}
+		
+		.searchresults>div {
+			margin-top: 0px;
+			width: 99%;
+			color: #000;
+			font-weight: bold;
+		}
+		
+		.searchresults ul {
+			background: #fff;
+			padding: 0 2px 0px 0;
+			margin-top: 0px;
+			height: 464px;
+			overflow-x: hidden;
+			overflow-y: auto;
+			margin-bottom: 0px;
+		}
+		
+		.searchresults li {
+			list-style: none;
+			padding: 8px 0 0;
+			margin-left: 3px;
+			color: #939393;
+			font-weight: 500;
+		}
+		
+		.searchresults li a {
+			color: #000;
+			font-weight: 500;
+			text-decoration: none;
+		}
+		
+		.searchresults li a:hover {
+			text-decoration: underline;
+		}
+		
+		.searchresults li:first-child {
+			padding-top: 0
+		}
+		
+		#smallResultsBottom ul,
+		#smallResultsTop ul {
+			height: 245px;
+		}
+		
+		#smallResultsBottom {
+			border-width: 1px 1px 1px 1px;
+		}
+		
+		#largeResults1 ul {
+			height: 540px;
+		}
+		
+		#largeResults1 {
+			border-width: 0px 1px 1px 1px;
+		}
+		
+		#resultsTable {
+			display: none;
+		}
+		
+		#smallResultsTop{
+			border-width: 0px 1px 1px 1px;
+			height: 257px;
+		}
+		
+		input {
+			-webkit-border-radius:0px;
+			border-radius:0;
+		}
+		
+		#guidance ul {
+			-webkit-margin-after: initial;
+		}
+		
+		.bottomresults{
+			margin-top: 20px!important;
+		}
+		
+		svg#svg {
+			
+		}
+		
+	</style>
+
+	<table width="100%" border="0" style="border-collapse: collapse;">
+		<tr>
+			<td style="white-space: nowrap; width:270px;"><div id="searchtitle">Visual Search</div></td>
+			<td style="text-align:right;white-space: nowrap;">
+				<table style="width:92%; margin-left: 30px; border-collapse: collapse;">
+					<tr>
+						<td style="text-align:right;white-space: nowrap;">
+							<input type="search" id="tagsearch" placeholder="Search Spark" value="" autocomplete="off" title="Enter your search terms here and press Enter">
+						</td>
+						<td style="width: 53px"><button onclick='addSearchTerm($("#tagsearch").val(),true); doSearch(true, true, "searchbox");'>Search</button></td>
+					</tr>
+				</table>
+			</td>
+			<td  width="277px">
+			<div class="searchoptions" style="font-weight:bold;">Search options</div>
+		<div class="searchoptions" title="Choose to filter content results by last modified date">Last modified: &nbsp;
+			<select id="daterange">
+			  <option value="all">All time</option>
+			  <option value="1">1 day</option>
+			  <option value="7">7 days</option>
+			  <option value="30">30 days</option>
+			  <option value="90">90 days</option>
+			  <option value="180">180 days</option>
+			  <option value="365">1 year</option>
+			</select>
+		</div>
+			<div class="searchoptions"  title="Choose to sort content and place results by relevance or by last modified date">Sort by:&nbsp;
+				<input type="radio" name="sortoption"  value="relevance" checked> Relevance <input type="radio" name="sortoption"  value="date"> Last modified date</div>
+			
+			<div class="searchoptions"  title="Social Search returns results weighted according to social activity. Results with higher social relevance are given higher ranking.">Social search:&nbsp;
+				 <input type="radio" name="social"  value="true" checked> On <input type="radio" name="social"  value="false"> Off</div>
+			
+			</td>
+		</tr>
+	</table>
+
+	<div id="resultsTable" style="display:none;">
+		<table width="100%" border="0" style="table-layout: fixed;">
+			<tr>
+				<td id="relatedtermdesc">
+					<div class="resultdesc"></div>
+				</td>
+				<td id="searchresultsdesc" colspan="2">
+					<div class="resultdesc"></div>
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2" id="nodegraph">
+					<div id="guidance">
+						<div id="showhideguidance"><a href="#" onclick="toggleguidance();return false">- Hide guidance</a></div>
+						<ul>
+							<li><b>Click</b> a term to perform a new search for it.</li>
+							<li class="notforios">Press <kbd class="keyboard-key nowrap" style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); padding: 0.1em 0.3em; font-family: inherit; font-size: 0.85em;">⇧ Shift</kbd> and <b>Click</b> a term to add it to your current search.</li>
+							<li class="notforios"><b>Double Click</b> a term to show other terms used as tags with it.</li>
+						</ul>
+					</div>
+					<div id="nodegraphplaceholder"></div>
+					<div class="tagsets"><b>Tag set showing:&nbsp;</b>
+						<a href="#" class="set0anchor" title="Show first 30 tags" onclick="swtichtagsets('set0'); return false;">Set 1</a>&nbsp;&nbsp;
+						<a href="#" class="set1anchor" title="Show tags 31 to 60" onclick="swtichtagsets('set1'); return false;">Set 2</a>&nbsp;&nbsp;
+						<a href="#" class="set2anchor" title="Show tags 61 to 90" onclick="swtichtagsets('set2'); return false;">Set 3</a>
+					</div>
+				</td>
+				<td id="largeResults1" class="searchresults" rowspan="2">
+					<div class="largeresults sresults ">
+						<div id="largeResType" class="resulttype"></div>
+						<ul></ul>
+					</div>
+				</td>
+				<td id="smallResultsTop" class="searchresults">
+					<div class="topresults sresults">
+						<div id="topResType" class="resulttype"></div>
+						<ul></ul>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td id="smallResultsBottom" class="searchresults">
+					<div class="bottomresults sresults">
+						<div id="bottomResType" class="resulttype"></div>
+						<ul></ul>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<script>
+
+		var graph, $, root, nodeCount, currentquery, searchcount, addMode = false, grouptags = [], contenttags = [], queryTermArray = [], hash, sortorder,socialsearch, dateRestriction;
+		var maxTagsDisp = 30; 
+		var maxTotalTags=90;
+		var trackUsage = false;
+		var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+		
+		loadjqueryifnecessary();
+		loadd3ifnecessary();
+		runwhenjqueryloaded();
+		
+		function loadjqueryifnecessary(){
+			if (typeof(window.jQuery) == 'undefined') {
+				var q = document.createElement('script');
+				q.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js';
+				document.body.appendChild(q);
+				void 0;
+			}
+		}
+		
+		function loadd3ifnecessary(){
+			if (typeof(d3) == 'undefined') {
+				var q = document.createElement('script');
+				q.src = 'https://d3js.org/d3.v3.min.js';
+				document.body.appendChild(q);
+				void 0;
+			}
+		}
+		
+		function runwhenjqueryloaded() {
+			if (window.jQuery) {
+				//$ = jQuery.noConflict();
+				if (typeof($) == 'undefined' && typeof($j) =='function') {
+					$=$j;
+				}else{
+					$ = jQuery.noConflict();
+				}
+				$('#resultsTable').slideUp();
+				var q = gup("q", top.location).replace(/%26/g, '&').replace(/%2526/g, "&").replace(/%20/g, ' ').replace(/\+/g, ' ');
+				
+				hash=top.location.hash.substring(1);
+				if (q != "") {
+					addSearchTerm(decodeURIComponent(q),true);
+					var actiontype = "parameter-search";
+					doSearch(true, true, actiontype) ;
+				}else if(hash !=""){
+					hash=atob(hash);
+					var r=decodeURIComponent(gup("r",hash));
+					var t=decodeURIComponent(gup("t",hash));
+					var sort=decodeURIComponent(gup("s",hash));
+					var soc=decodeURIComponent(gup("ss",hash));
+					var d=decodeURIComponent(gup("d",hash));
+					$("input[name=sortoption][value='"+sort+"']").prop("checked",true);
+					$("input[name=social][value='"+soc+"']").prop("checked",true);
+					$("#daterange").val(d);
+					addSearchTerm(r,true);
+					doSearch(true, true, "none");
+					setTimeout(function() {
+						queryTermArray = [];
+						queryTermArray =t.split('^');
+						setSearchQuery();
+						doSearch(true, false, actiontype);
+						markSelectedNodes();
+					}, 2000);
+				}
+				
+				if(iOS){$(".notforios, #morelesslink").hide()}
+				$("#tagsearch").bind("keypress", {}, keypressInBox);
+				$( "#daterange,input[name=sortoption],input[name=social]" ).change(function() {
+					if($('#tagsearch').val()!=""){
+						addSearchTerm($('#tagsearch').val(),true);
+						doSearch(true, true, "searchoptionschange") ;
+					}
+				});
+				
+				
+				//addUserAsMember();
+			} else {
+				setTimeout(function() {
+					runwhenjqueryloaded()
+				}, 50);
+			}
+		}	
+		
+		function addUserAsMember() {
+			$.ajax({
+				type: 'POST',
+				url: '/api/core/v3/members/places/'+parent.jive.global.containerBrowseId,
+				dataType: "json",
+				data: '{"person" : "/api/core/v3/people/'+parent._jive_effective_user_id+'","state" : "member"}',
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader('X-J-Token', parent._jive_auth_token);
+				},
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				success: function(data) {
+				   //
+				},
+				error: function(xhr, status, err) {
+					console.log(status, err);
+				}
+			});
+		}
+		
+		function enableHashChangeListener() {
+			$(window.parent).on('hashchange', function() {
+				//var hashq=decodeURIComponent(window.parent.location.hash.substring(1));
+				//var hashq=top.location.hash.substring(1);
+				var hash=atob(top.location.hash.substring(1));
+				var r=decodeURIComponent(gup("r",hash));
+				var t=decodeURIComponent(gup("t",hash));
+				var sort=decodeURIComponent(gup("s",hash));
+				var soc=decodeURIComponent(gup("ss",hash));
+				var d=decodeURIComponent(gup("d",hash));
+				if(hash !="" && (r !=root || t != queryTermArray.join('^') || sort != $("input[name=sortoption]:checked").val() || soc !=$("input[name=social]:checked").val() || d!=$( "#daterange" ).val() )){
+					if(r!=root){
+						var actiontype = "history-search";
+						addSearchTerm(r,true);
+						$("input[name=sortoption][value='"+sort+"']").prop("checked",true);
+						$("input[name=social][value='"+soc+"']").prop("checked",true);
+						$("#daterange").val(d);
+						doSearch(true, true, "none");
+						setTimeout(function() {
+							queryTermArray = [];
+							queryTermArray =t.split('^');
+							setSearchQuery();
+							doSearch(true, false, actiontype);
+							markSelectedNodes();
+						}, 2000);
+					//}else if(t != queryTermArray.join('^')){
+					}else{
+						queryTermArray =t.split('^');
+						$("input[name=sortoption][value='"+sort+"']").prop("checked",true);
+						$("input[name=social][value='"+soc+"']").prop("checked",true);
+						$("#daterange").val(d);
+						setSearchQuery();
+						doSearch(true, false, actiontype);
+						markSelectedNodes();
+					}
+				}
+			});
+		}
+		
+		function trackSearch(actiontype, query) {
+			if (typeof dcsMultiTrack === 'function') {
+				if(trackUsage==true){
+					dcsMultiTrack('DCS.dcsuri','/','DCSext.actiontype', actiontype, 'DCSext.query', query, 'DCSext.dcsaut', parent._jive_current_user.username);
+				}
+			} else {
+				setTimeout(function() {
+					trackSearch(actiontype, query);
+				}, 50);
+			}
+		}
+		
+		function showHideheader() {
+			//function that hides or shows group navigation
+			if (parent.$j('.j-page-header').is(":visible")) {
+				$('#showhideheader a').text("Show header");
+				parent.$j('.j-page-header').slideUp(1000);
+			} else {
+				parent.$j('.j-page-header').slideDown(1000);
+				$('#showhideheader a').text("Hide header");
+			}
+		}
+
+		function myGraph() {
+			// Add and remove elements on the graph object
+			this.addNode = function(id) {
+				var pos = findNodeIndex(id);
+				if (pos == undefined) {
+					nodes.push({
+						"id": id,
+						"label": id,
+						"set": parseInt(nodeCount/maxTagsDisp),
+						"num": nodeCount
+					});
+					nodeCount++;
+					nodes[0].fixed = true;
+					nodes[0].x = 25;
+					nodes[0].y = h / 2;
+					nodes[0].set = "";
+					update();
+				} else {
+					//console.log("duplicate - "+id)
+				}
+			};
+
+			this.addLink = function(source, target, value) {
+				links.push({
+					"source": findNode(source),
+					"target": findNode(target),
+					"value": value,
+					"set": parseInt((nodeCount-1)/maxTagsDisp)
+				});
+				update();
+			};
+			var findNode = function(id) {
+				for (var i in nodes) {
+					if (nodes[i]["id"] === id) return nodes[i];
+				};
+			};
+			var findNodeIndex = function(id) {
+				for (var i = 0; i < nodes.length; i++) {
+					if (nodes[i].id == id) {
+						return i;
+					}
+				};
+			};
+			// set up the D3 visualisation in the specified element                 				
+			var w = $('#nodegraph').width(),
+				h = $('#nodegraph').height() - $('#guidance').height() - $('.tagsets').height();
+				r = 15;
+			var vis = d3.select("#nodegraphplaceholder")
+				.append("svg:svg")
+				.attr("width", w)
+				.attr("height", h)
+				.attr("id", "svg")
+				.attr("pointer-events", "all")
+				.attr("viewBox", "0 0 " + w + " " + h)
+				.attr("perserveAspectRatio", "xMinYMid")
+				.on("mouseover", function(d) {
+					//force.stop();
+				})
+				.on("mouseout", function(d) {
+					//force.resume();					
+				})
+				/*.append('svg:g');*/
+
+			var force = d3.layout.force();
+
+			var nodes = force.nodes(),
+				links = force.links();
+
+			var update = function() {
+				var link = vis.selectAll("line")
+					.data(links, function(d) {
+						return d.source.id + "-" + d.target.id;
+					});
+				link.enter().append("line")
+					.attr("id", function(d) {
+						return d.source.id + "-" + d.target.id;
+					})
+					.attr("stroke-width", function(d) {
+						//return d.value / 10;
+						return 0.5;
+					})
+					.attr("class",  function(d) {
+						return "link set"+ d.set;
+					})
+					
+			//link.append("title")				.text(function(d) {					return d.value;				});
+				link.exit().remove();
+				dblclick_timer = false;
+				var node = vis.selectAll("g.node")
+					.on("click", function(d) {
+						var shiftorctrlpressed = false;
+						if (d3.event.defaultPrevented) return;
+						shiftorctrlpressed = d3.event.shiftKey || d3.event.ctrlKey;
+						var markselected = true;
+						var performsearch = true;
+						var isNewQuery;
+						d.fixed=true;
+						//force.stop();
+						// if double click timer is active, this click is the double click
+						if (dblclick_timer) {
+							clearTimeout(dblclick_timer);
+							dblclick_timer = false;
+							var actiontype="double-click";
+							if (shiftorctrlpressed) {
+								if ($.inArray(d.id, queryTermArray) !== -1) {
+									queryTermArray.splice(queryTermArray.indexOf(d.id), 1);
+									actiontype="double-click-remove";
+								} else {
+									addSearchTerm(d.id,true);
+									actiontype="double-click-add";
+								}
+							} else {
+								addSearchTerm(d.id,true);
+							}
+							//force.resume();
+							setSearchQuery(); //update the search box
+							doSearch(true, true, actiontype) 
+							//console.log("double click fired")
+						} else {
+							dblclick_timer = setTimeout(function() {
+								dblclick_timer = false;
+								var actiontype="single-click";
+								d.fixed=true;
+								if (shiftorctrlpressed) {
+									if ($.inArray(d.id, queryTermArray) !== -1) {
+										if (queryTermArray.length > 1) {
+											queryTermArray.splice(queryTermArray.indexOf(d.id), 1);
+											actiontype="single-click-remove";
+										} else {
+											performsearch = false;
+										}
+									} else {
+										addSearchTerm(d.id,false);
+										actiontype="single-click-add";
+									}
+									if (performsearch == true) {
+										setSearchQuery();
+										doSearch(true, false, actiontype) 
+									}
+								} else {
+									addSearchTerm(d.id,true);
+									doSearch(true, false, actiontype) 
+									
+								}
+								markSelectedNodes();
+								//console.log("single click fired")
+							}, 350);
+							if (shiftorctrlpressed == false) {
+								markSelectedNodes();
+							}
+
+							//force.resume();
+							//							.on("mousedown", mousedown)				.on("mouseup",mouseup)
+						}
+					})
+					.on("mouseover", mouseover)	
+					.on("mouseout", mouseout)	
+					.data(nodes, function(d) {
+						return d.id;
+					});
+					
+
+
+				var nodeEnter = node.enter().append("g")
+					.attr("class", "node")
+					.call(force.drag)
+
+				nodeEnter.append("svg:circle")
+					.attr("r", function(d) {
+						if (d.id == root) {
+							return r * 1.5
+						} else {
+							return r
+						}
+					})
+					.attr("label", function(d) {
+						return d.label;
+					})
+					.attr("class",  function(d) {
+						return "nodeStrokeClass set"+ d.set;
+					})
+					.attr("fill", function(d) {
+						//console.log(d.id);
+						if (d.id == root) {
+							return "#000"
+						} else {
+							//return "#dc6900"
+							return pwc_colour(d.num); 
+						}
+					});
+
+				nodeEnter.append("svg:text")
+					.attr("textlabel", function(d) {
+						//"label_" + d.id;
+						return d.label;
+					})
+					.attr("class", function(d) {
+						if (d.id == root) {
+							return "roottextClass set"+d.set;
+						} else {
+							return "textClass set"+d.set;
+						};
+					})
+					.text(function(d) {
+						return d.id;
+					});
+
+
+				node.exit().remove();
+
+				d3.select(window).on("resize", resize).on("keydown", keydown).on("keyup", keyup)
+
+				function keydown() {
+					//force.stop();
+					if (addMode == false && (d3.event.keyCode == 16 || d3.event.keyCode == 17)) {
+						//force.stop();
+						addMode = true;
+						d3.selectAll("text").text(function(d) {
+							if ($.inArray(d.id, queryTermArray) !== -1) {
+								return "-" + d.id;
+							} else {
+								return "+" + d.id;
+							}
+						});
+					}
+				}
+
+
+				function keyup() {
+					if (addMode == true && (d3.event.keyCode == 16 || d3.event.keyCode == 17)) {
+						addMode = false;
+						//force.resume();
+						d3.selectAll("text").text(function(d) {
+							return d.id;
+						});
+					}
+				}
+
+				function resize() {
+					w = $('#nodegraph').width();
+					h = $('#nodegraph').height() - $('#guidance').height() - $('.tagsets').height();
+					vis.attr("width", w).attr("height", h);
+					force.size([w, h]).resume();
+				}
+
+
+				function mouseover(selection) {
+					//selection.fixed = true;
+					d3.selectAll("text").transition().duration(600).ease("linear").style("opacity", 0.1);
+					d3.selectAll("circle").transition().duration(600).ease("linear").style("opacity", 0.1);
+					d3.selectAll("line").transition().duration(600).ease("linear").style("opacity", .1);
+
+					d3.select("[label='" + selection.label + "']").transition().duration(300).ease("linear").style("opacity", 1);
+					d3.select("[textlabel='" + selection.label + "']").transition().duration(300).ease("linear").style("opacity", 1);
+				}
+
+				function mouseout(selection) {
+					if(selection.id !== root){
+							//selection.fixed = false;
+					}
+					d3.selectAll("text").transition().duration(400).ease("linear").style("opacity", 1);
+					d3.selectAll("circle").transition().duration(400).ease("linear").style("opacity", 1);
+					d3.selectAll("line").transition().duration(400).ease("linear").style("opacity", 1);
+				}
+				
+				function mousedown(selection){
+					//force.stop();
+					selection.fixed = true;
+				}
+				
+				function mouseup(selection){
+				//	force.resume();
+					if(selection.id !== root){
+						selection.fixed = false;
+					}
+				}
+				
+				
+
+				force.on("tick", tick);
+
+				function tick() {
+					link.attr("x1", function(d) {
+							return d.source.x;
+						})
+						.attr("y1", function(d) {
+							return d.source.y;
+						})
+						.attr("x2", function(d) {
+							return d.target.x;
+						})
+						.attr("y2", function(d) {
+							return d.target.y;
+						});
+					d3.selectAll("circle").attr("cx", function(d) {
+							return d.x = Math.max(r, Math.min((w - 50) - r, d.x));
+						})
+						.attr("cy", function(d) {
+							return d.y = Math.max(r, Math.min(h - r, d.y));
+						});
+
+					d3.selectAll("text").attr("x", function(d) {
+							if (d.id == root) {
+								return d.x + 24
+							} else {
+								return d.x + 17
+							}
+						})
+						.attr("y", function(d) {
+							return d.y + 4;
+						});
+
+				};
+							
+				
+				var k = Math.sqrt(nodes.length / (w * h * 3));
+				// Restart the force layout.                     				.friction(0.1)
+				force
+					.charge(-10 / k).gravity(100 * k)
+					.linkDistance(function(d) {
+						return d.value * 13
+					})
+					.size([w, h])
+					.start();
+			};
+			update();
+		}
+
+		function keypressInBox(e) {
+			//function to track keypresses in search  and perform search on Enter
+			var code = (e.keyCode ? e.keyCode : e.which);
+			if (code == 13) { //Enter keycode                  
+				e.preventDefault();
+				addSearchTerm($('#tagsearch').val(),true);
+				doSearch(true, true, "searchbox") 
+			}
+		};
+		
+		function addSearchTerm(term,reset){
+			if(reset==true){
+				queryTermArray = []; //Clear out the array of selected nodes
+			}
+			queryTermArray.push(term); // add the current query to the list of selected nodes
+			setSearchQuery();
+		}
+
+		function setSearchQuery(){
+			s = queryTermArray.join(" ");
+			q = s.replace(/(\b\S+\b)(($|\s+)\1)+/gi, "$1");
+			$('#tagsearch').val(q);
+			if(root==undefined){root=queryTermArray[0]}
+			hashq = btoa("&r="+root+"&t="+queryTermArray.join("^"));
+		}	
+		
+		function doSearch(isNewQuery, updateNodes, actiontype) {
+			if($('#tagsearch').val()==""){ return false;}
+			readSearchOptions();
+			if(updateNodes==true){
+				root=queryTermArray[0];
+				$('#resultsTable').slideDown(1000);
+				nodeCount = 0;
+				searchcount=0;
+				grouptags = [];
+				contenttags=[];
+				d3.select("svg").remove(); //Clear out the node graph ready for fresh nodes
+				graph = new myGraph("#svgdiv");
+				graph.addNode(root);
+				$('#relatedtermdesc div').html('These are some of the terms that people used as tags on results mentioning \'<div  class="searchterm">' + root + '</div>\'');
+				swtichtagsets('set0');
+			}
+			
+			if (isNewQuery) { //If this is a new search rather than a request for the next x results then clear out all the results spaces ready for new results
+				$('.sresults ul').html("");
+			}
+			
+			if(actiontype!="none" && actiontype!="history-search"){
+				$(window.parent).off('hashchange');
+				//top.location.hash = '#'+hashq;
+				$('head title', window.parent.document).text('Visual Search - '+root +'>'+queryTermArray.join(' '));
+				//window.parent.location.hash= "&r="+encodeURIComponent(root)+"&t="+encodeURIComponent(queryTermArray.join("^"));
+				window.parent.location.hash=btoa("&r="+encodeURIComponent(root)+"&t="+encodeURIComponent(queryTermArray.join("^"))+"&s="+encodeURIComponent(sortorder)+"&ss="+encodeURIComponent(socialsearch)+"&d="+encodeURIComponent($( "#daterange" ).val()));
+				enableHashChangeListener();
+			}
+					
+			var displayq= $('#tagsearch').val();
+			if(actiontype!="none"){
+				trackSearch(displayq,actiontype);
+			}
+			$('.sresults ul').html('<li class="pwcmps_Loader">Searching<br /><img src="/images/jive-image-loading.gif" /></li>'); //Display indication that something is happening
+			$('#searchresultsdesc div').html('Showing search results for \'<div  class="searchterm">' + displayq + '</div>\''); //Update the description for the search results
+			var q = encodeURIComponent(displayq);
+			var sort="";
+			var peoplesort="";
+			if(sortorder=="date"){
+				peoplesort="&sort=lastProfileUpdateDesc";
+				sort="&sort=updatedDesc";
+			}
+			sortorder="";
+			ajaxGet('/api/core/v3/search/contents?collapse=true&returnScore=true&fields=type,subject,parentPlace,author,published,updated,tags&count=30&filter=depth(ALL)&socialSearch='+socialsearch+dateRestriction+sort+'&filter=search(' + q + '*)', isNewQuery, "content", updateNodes); //Content
+			ajaxGet('/api/core/v3/search?returnScore=true&count=30&socialSearch='+socialsearch+sort+'&filter=search(' + q + '*)', isNewQuery, "places", updateNodes);  //Places
+			ajaxGet('/api/core/v3/search/people?count=30'+peoplesort+'&filter=search(' + q + '*)', isNewQuery, "people", updateNodes); //People
+		}
+
+		function ajaxGet(targeturl, isNewQuery, resultsType, updateNodes) {
+			$.ajax({
+				type: 'GET',
+				url: targeturl,
+				dataType: "text",
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader('X-J-Token', parent._jive_auth_token);
+				},
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				success: function(data) {
+					data = data.replace(/^throw [^;]*;/, ''); 
+					data = JSON.parse(data);
+					renderResult(data, isNewQuery, targeturl, resultsType, updateNodes)
+				},
+				error: function(xhr, status, err) {
+					console.log(status, err);
+				}
+			});
+		}
+
+		function pwc_colour(n) {
+			PwCcolours=["#D04A02","#E0301E","#D93954","#A32020","#817A64","#7C7D7F","#D96E35","#E6594B","#E16176","#B54D4D","#8F8975","#8A8B8D","#E39267","#EC8378","#E88898","#C87979","#ABA698","#A7A8AA","#ECB79A","#F3ACA5","#F0B0BB","#DAA6A6","#C7C4BA","#C5C5C6"];
+			return PwCcolours[n % PwCcolours.length];
+		}
+		
+		function markSelectedNodes(){
+			d3.selectAll("circle").attr("fill", function(d) {
+				return pwc_colour(d.num); 
+			});	
+			for (var i = 0; i < queryTermArray.length; i++) {
+					d3.select("[label='" + queryTermArray[i] + "']").attr("fill", '#000');
+				};
+		}
+		
+		function keepNodesOnTop() {
+			//Keep nodes on top of lines rather than lines on top of nodes.
+			$(".nodeStrokeClass").each(function(index) {
+				var gnode = this.parentNode;
+				gnode.parentNode.appendChild(gnode);
+			});
+			$(".textClass").each(function(index) {
+				var gnode = this.parentNode;
+				gnode.parentNode.appendChild(gnode);
+			});
+		}
+
+		function getRandomInt(min, max) {
+			//Simple function to return random number between min and max. We use it to determine length of lines between the root node and other nodes.
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		function addSiblingTags(root) {
+			//function to call jive's jspa to display tag cloud and scrape sibling tags
+			//Not currently used as am pulling tags from content and group search results instead.
+			target = "/taggable-content.jspa?start=0&range=25&numResults=25&tags=" + root + "&containerType=14&container=1&sort=6001&taggableTypes=all&recursive=true";
+			$.ajax({
+				type: 'GET',
+				url: target,
+				dataType: "text",
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader('X-J-Token', parent._jive_auth_token);
+				},
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				success: function(data) {
+					newdata = $(data).wrap("<div></div>").find('#jive-populartags .jive-tagcloud-list li a');
+					$.each(newdata, function(index, value) {
+						dist = getRandomInt(5, 45);
+						nodename = $.trim(value.text);
+						graph.addNode(nodename);
+						graph.addLink(root, nodename, dist);
+						if (index == 15) {
+							return false
+						};
+						//console.log($.trim(value.text))	
+					});
+					keepNodesOnTop();
+				},
+				error: function(xhr, status, err) {
+					console.log(status, err);
+				}
+			});
+		}
+
+		function renderResult(rawResults, isNewQuery, lastsearchURL, resultType, updateNodes) {
+			//console.log(searchcount);
+			//This is a little more complex than it needs to be with the current set up but it will make things easier should we wish to allow users to choose which results are displayed in which table cells.
+			//For now, we're just adding the content results in the large cell and the people and places results in the adjacent top and bottom cells respectively.
+			if (resultType == "content") {
+				targetcell = "largeResults1";
+				$('#largeResType').text("CONTENT");
+			} else if (resultType == "people") {
+				targetcell = "smallResultsTop";
+				$('#topResType').text("PEOPLE");
+			} else { //groups
+				targetcell = "smallResultsBottom";
+				$('#bottomResType').text("PLACES");
+			}
+
+			if (isNewQuery) {
+				$('#' + targetcell + ' ul').html('');
+			}
+			if (rawResults.list.length < 1) {
+				$('#' + targetcell + '_More').remove();
+				$('#' + targetcell + ' ul').unbind('scroll');
+				$('#' + targetcell + ' ul').append('<li>No search results found. Please try again.</li>');
+			} else {	
+				$(rawResults.list).each(function() { //step thought the results JSON to build up and display styled list of results
+					//console.log(this.id);
+					if (resultType == "content") {
+						if (this.author == undefined) {
+							author = "";
+						} else {
+							author = 'by '+this.author.displayName;
+						}
+						if (this.parentPlace == undefined) {
+							pphtml = "";
+							ppname = "";
+						} else {
+							pphtml = this.parentPlace.html;
+							ppname = this.parentPlace.name;
+						}
+						$('#' + targetcell + ' ul').append('<li><span class="pwcmps_Icon pwcmps_Type_' + this.type + '"></span><div class="contentresults"><a class="pwcmps_Link" href="' + this.resources.html.ref + '" title="Open ' + this.type + ' in new tab" target="_blank">' + this.subject + '</a><br>in <a class="pwcmps_ParentPlace" href="' + pphtml + '" target="_blank">' + ppname + '</a><br>' + author + ', modified ' + pwcmps_parseJiveDate(this.updated).toString().split(' ').splice(1, 3).join(' ') + '</div></li>');
+						tmptags = this.tags;
+						//console.log(tmptags);
+						if (tmptags != undefined && updateNodes == true) {
+							$.each(tmptags, function(index, value) {
+								if ($.inArray(value, contenttags) == -1) {
+									contenttags.push(value);
+								}
+							});
+						}
+
+					} else if (resultType == "people") {
+						if (this.jive.profile == undefined) {
+							loc = "";
+						} else {
+							loc = this.jive.profile[0].value;
+						}
+						if (this.emails == undefined) {
+							email = "email not available";
+						} else {
+							email = this.emails[0].value
+						}
+						
+						$('#' + targetcell + ' ul').append('<li data-self="' + this.resources.self.ref + '" class="j-search-result j-person" style="display: list-item;"><div class="j-result-icon"><a href="' + this.resources.html.ref + '" target="_blank title="' + this.displayName + '" class="j-avatar  jiveTT-hover-user" data-userid="' + this.id + '"><img class="jive-avatar" src="/people/' + this.jive.username + '/avatar/35.png?a=' + this.thumbnailId + '" data-avatarid="' + this.thumbnailId + '" data-username="' + this.jive.username + '" height="35" data-height="35" width="35" alt="' + this.displayName + '" title="Open profile in new tab"></a></div><div class="j-result-content"><a class="j-search-result-value jiveTT-hover-user" data-userid="' + this.id + '" href="/people/' + this.jive.username + '" title="Open profile in new tab" target="_blank"><span class="j-search-result-title">' + this.displayName + '</span></a><p class="j-title-location">' + loc + '</p><p class="j-contact"><a class="j-email" href="mailto:' + email + '">' + email + '</a></p></div></li>');
+						
+					} else { //groups
+						if(this.description != undefined){
+							var desc = this.description.substr(0, 100);
+							if (this.description.length > 100) {
+								var desc = desc + "..."
+							}
+						}
+						$('#' + targetcell + ' ul').append('<li data-self="' + this.resources.self.ref + '" class="j-search-result" style="display: list-item;"><div class="j-result-icon"><span title="' + this.type + '" role="img" class="jive-icon-big ' + this.iconCss + '""></span></div><div class="j-result-content"><a class="j-search-result-value jivecontainerTT-hover-container" data-objecttype="700" data-objectid="' + this.id + '" href="' + this.resources.html.ref + '" title="Open ' + this.type + ' in new tab" target="_blank"><span class="j-search-result-title">' + this.name + '</span></a><p class="j-search-result-summary">' + desc + '</p></div></li>');
+						tmptags = this.tags;
+						
+						if (tmptags != undefined && updateNodes == true) {
+							$.each(tmptags, function(index, value) {
+								if ($.inArray(value, grouptags) == -1) {
+									grouptags.push(value);
+								}
+							});
+						}
+					}
+				});
+				checkForNextPage(rawResults, lastsearchURL, resultType, targetcell); //make call to determine if there are any additional results available
+			}
+			searchcount++;
+			
+			if(searchcount==3 && updateNodes == true){//Then we've got all the tags
+				var tagstotal=contenttags.length+grouptags.length;
+				for (var step=0; step< tagstotal && nodeCount <maxTotalTags; step++) {
+					if (nodeCount < maxTotalTags && step < contenttags.length) {
+						graph.addNode(contenttags[step]);
+						graph.addLink(root, contenttags[step], getRandomInt(5, 20));
+					}
+					if (nodeCount < maxTotalTags && step < grouptags.length) {
+						graph.addNode(grouptags[step]);
+						graph.addLink(root, grouptags[step], getRandomInt(5, 20));
+					}
+					keepNodesOnTop();
+				}
+				
+				if(nodeCount<30){
+					$('.tagsets').hide();
+				}else if(nodeCount<61){
+					$('.set2anchor').hide();
+				}else{
+					$('.set2anchor').show();
+					$('.tagsets').show();
+				}
+			}
+		}
+		
+		function checkForNextPage(rawResults, lastsearchURL, resultType, targetcell) {
+			if (rawResults.links !== undefined) {
+				var nextUrl = rawResults.links.next; //dertermine if there are more results available
+			}
+			$('#' + targetcell + '_More').remove(); //delete more indicator as we'll add it again if necessary
+			if (nextUrl !== undefined) {
+				//$('#' + targetcell + ' > div').append('<div id="' + targetcell + '_More">Scroll down to load more results</div>');
+				$('#' + targetcell + ' ul').unbind('scroll').scroll(function() { // Configure the spotlight results scrollbar to ..
+					if ($('#' + targetcell + '_More').length == 0 && $(this)[0].scrollHeight - $(this).scrollTop() <= $(this).outerHeight()) { //determine when its been scrolled to the bottom and ...
+						$('#' + targetcell + ' ul').append('<li id="' + targetcell + '_More">Searching <img src="/images/jive-icon-working-16x16.gif" /></li>');
+						var sindex = gup("startIndex", nextUrl);
+						if (lastsearchURL.indexOf("&startIndex=") > -1) {
+							lastsearchURL = lastsearchURL.substring(0, lastsearchURL.indexOf("&startIndex="));
+						}
+						nextUrl = lastsearchURL + "&startIndex=" + sindex;
+						ajaxGet(nextUrl, false, resultType, false); //go and get the next set of results
+					}
+				});
+			} else {
+				$('#' + targetcell + ' ul').unbind('scroll');
+			}
+		}
+
+		function gup(name, url) {
+			//A function to grab the values passed as parameters to a url. Get Url Paramers - GUP
+			name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+			var regexS = "[\\?&]" + name + "=([^&#]*)";
+			var regex = new RegExp(regexS);
+			var results = regex.exec(url);
+			if (results == null)
+				return "";
+			else
+				return results[1];
+		}
+
+		function pwcmps_parseJiveDate(dateString) {
+			var dateRegex = /(\d\d\d\d)-(\d\d)-(\d\d)T(\d\d):(\d\d):(\d\d)\.(\d\d\d)\+0000/;
+			//First try to match the strict date format from Jive
+			var match = dateRegex.exec(dateString);
+			if (!match) {
+				//On fail, fall back to default date parsing
+				return new Date(dateString);
+			}
+			var year = parseInt(match[1]);
+			var month = parseInt(match[2]) - 1; //javascript expects a month between 0 and 11
+			var day = parseInt(match[3]);
+			var hour = parseInt(match[4]);
+			var min = parseInt(match[5]);
+			var s = parseInt(match[6]);
+			var ms = parseInt(match[7]);
+			var d = new Date();
+			d.setUTCFullYear(year, month, day);
+			d.setUTCHours(hour, min, s, ms);
+			return d;
+		}
+
+		function toggleguidance() {
+			var currentlabel = $('#showhideguidance a').text();
+			if (currentlabel == "- Hide guidance") {
+				$('#showhideguidance a').text("+ Show guidance");
+				$('#guidance ul').slideUp();
+			} else {
+				$('#showhideguidance a').text("- Hide guidance");
+				$('#guidance ul').slideDown();
+			}
+		}
+		
+		function swtichtagsets(set){
+			$('.set0,.set1,.set2').fadeOut(600);
+			$("."+set).fadeIn(900);
+			$('.set0anchor, .set1anchor, .set2anchor').css('font-weight','normal');
+			$('.'+set+'anchor').css('font-weight','bold');
+		}
+
+		function readSearchOptions(){
+			var dateVal = $( "#daterange" ).val();
+			var today = new Date();
+			var days = 86400000 //number of milliseconds in a day;
+			if(dateVal=="all"){
+				dateRestriction ="";
+			} else{
+				//dateRestriction ="&filter=after("+_jive_moment(_jive_moment().subtract(parseInt(dateVal), 'd')).format('YYYY-MM-DD')+'T00%3A00%3A00.000%2B0000'+")";
+				dateRestriction ="&filter=after("+returnDateXDaysAgo(dateVal)+'T00%3A00%3A00.000%2B0000'+")";
+			}
+			sortorder = $("input[name=sortoption]:checked").val();
+			socialsearch = $("input[name=social]:checked").val();
+		}
+
+		function returnDateXDaysAgo(days_ago){
+			var newDate = new Date(new Date() - (days_ago*86400000 ));
+			return newDate.getFullYear()+"-"+('0'+parseInt(newDate.getMonth()+1)).slice(-2)+"-"+('0'+newDate.getDate()).slice(-2)
+		}
+
+		
+		</script>
